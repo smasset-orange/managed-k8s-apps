@@ -1,0 +1,8 @@
+---
+helmCharts:
+  - name: traefik
+    includeCRDs: true
+    valuesFile: traefik-values.yaml
+    releaseName: traefik
+    version: "v32.1.1"
+    repo: https://helm.traefik.io/traefik
