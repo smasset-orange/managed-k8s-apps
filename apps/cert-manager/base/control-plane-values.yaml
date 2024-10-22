@@ -1,0 +1,13 @@
+---
+cainjector:
+  tolerations: &tolerations
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Exists"
+
+startupapicheck:
+  tolerations: *tolerations
+
+webhook:
+  tolerations: *tolerations
+
+tolerations: *tolerations
