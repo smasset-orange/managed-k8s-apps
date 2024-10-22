@@ -1,0 +1,20 @@
+---
+nameReference:
+  - kind: Namespace
+    fieldSpecs:
+      - group: kamaji.clastix.io
+        kind: DataStore
+        version: v1alpha1
+        path: spec/tlsConfig/certificateAuthority/certificate/secretReference/namespace
+      - group: kamaji.clastix.io
+        kind: DataStore
+        version: v1alpha1
+        path: spec/tlsConfig/certificateAuthority/privateKey/secretReference/namespace
+      - group: kamaji.clastix.io
+        kind: DataStore
+        version: v1alpha1
+        path: spec/tlsConfig/clientCertificate/certificate/secretReference/namespace
+      - group: kamaji.clastix.io
+        kind: DataStore
+        version: v1alpha1
+        path: spec/tlsConfig/clientCertificate/privateKey/secretReference/namespace
