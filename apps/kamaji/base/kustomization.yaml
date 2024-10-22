@@ -1,0 +1,15 @@
+---
+configurations:
+  - configurations/nameReference.yaml
+
+resources:
+  - namespace.yaml
+
+helmCharts:
+  - name: kamaji
+    namespace: kamaji-system
+    includeCRDs: true
+    valuesFile: kamaji-values.yaml
+    releaseName: kamaji
+    version: "v1.0.0"
+    repo: https://clastix.github.io/charts
