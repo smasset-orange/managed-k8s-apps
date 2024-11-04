@@ -1,0 +1,91 @@
+---
+cephClusterSpec:
+  dashboard:
+
+    ssl: False
+  placement:
+    all:
+      tolerations: &tolerations
+        - key: "node-role.kubernetes.io/control-plane"
+          operator: "Exists"
+cephFileSystems:
+  - name: ceph-filesystem
+    spec:
+      dataPools:
+        - failureDomain: host
+          name: data0
+          replicated:
+            size: 3
+      metadataPool:
+        replicated:
+          size: 3
+      metadataServer:
+        activeCount: 1
+        activeStandby: true
+        placement:
+          tolerations: *tolerations
+        priorityClassName: system-cluster-critical
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: "4Gi"
+          requests:
+            cpu: "1000m"
+            memory: "4Gi"
+    storageClass:
+      allowVolumeExpansion: true
+      annotations: {}
+      enabled: true
+      isDefault: false
+      labels: {}
+      mountOptions: []
+      name: ceph-filesystem
+      parameters:
+        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-cephfs-provisioner
+        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph-cluster-system
+        csi.storage.k8s.io/fstype: ext4
+        csi.storage.k8s.io/node-stage-secret-name: rook-csi-cephfs-node
+        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph-cluster-system
+        csi.storage.k8s.io/provisioner-secret-name: rook-csi-cephfs-provisioner
+        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph-cluster-system
+      pool: data0
+      reclaimPolicy: Delete
+      volumeBindingMode: Immediate
+cephObjectStores:
+  - name: ceph-objectstore
+    spec:
+      metadataPool:
+        failureDomain: host
+        replicated:
+          size: 3
+      dataPool:
+        failureDomain: host
+        erasureCoded:
+          dataChunks: 2
+          codingChunks: 1
+      preservePoolsOnDelete: true
+      gateway:
+        placement:
+          tolerations: *tolerations
+        port: 80
+        resources:
+          limits:
+            cpu: "2000m"
+            memory: "2Gi"
+          requests:
+            cpu: "1000m"
+            memory: "1Gi"
+        instances: 1
+        priorityClassName: system-cluster-critical
+    storageClass:
+      annotations: {}
+      enabled: true
+      labels: {}
+      name: ceph-bucket
+      reclaimPolicy: Delete
+      volumeBindingMode: "Immediate"
+      parameters:
+        region: us-east-1
+    ingress:
+      enabled: false
+operatorNamespace: rook-ceph-system
