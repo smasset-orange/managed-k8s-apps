@@ -1,0 +1,9 @@
+---
+csi:
+  pluginTolerations: &tolerations
+    - key: "node-role.kubernetes.io/control-plane"
+      operator: "Exists"
+  provisionerTolerations: *tolerations
+discover:
+  tolerations: *tolerations
+tolerations: *tolerations
