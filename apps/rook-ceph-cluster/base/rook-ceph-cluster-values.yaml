@@ -88,4 +88,4 @@ cephObjectStores:
         region: us-east-1
     ingress:
       enabled: false
-# operatorNamespace: rook-ceph-system
+operatorNamespace: rook-ceph-system
