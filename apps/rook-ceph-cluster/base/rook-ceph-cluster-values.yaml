@@ -36,7 +36,7 @@ cephFileSystems:
       allowVolumeExpansion: true
       annotations: {}
       enabled: true
-      isDefault: true
+      isDefault: false
       labels: {}
       mountOptions: []
       name: ceph-filesystem
