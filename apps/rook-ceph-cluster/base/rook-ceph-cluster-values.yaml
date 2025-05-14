@@ -32,22 +32,22 @@ cephFileSystems:
           requests:
             cpu: "1000m"
             memory: "4Gi"
-    # storageClass:
-    #   allowVolumeExpansion: true
-    #   annotations: {}
-    #   enabled: true
-    #   isDefault: true
-    #   labels: {}
-    #   mountOptions: []
-    #   name: ceph-filesystem
-    #   parameters:
-    #     csi.storage.k8s.io/controller-expand-secret-name: rook-csi-cephfs-provisioner
-    #     csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph-cluster-namespace
-    #     csi.storage.k8s.io/fstype: ext4
-    #     csi.storage.k8s.io/node-stage-secret-name: rook-csi-cephfs-node
-    #     csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph-cluster-namespace
-    #     csi.storage.k8s.io/provisioner-secret-name: rook-csi-cephfs-provisioner
-    #     csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph-cluster-namespace
+    storageClass:
+      allowVolumeExpansion: true
+      annotations: {}
+      enabled: true
+      isDefault: true
+      labels: {}
+      mountOptions: []
+      name: ceph-filesystem
+      parameters:
+        csi.storage.k8s.io/controller-expand-secret-name: rook-csi-cephfs-provisioner
+        csi.storage.k8s.io/controller-expand-secret-namespace: rook-ceph-cluster-system
+        csi.storage.k8s.io/fstype: ext4
+        csi.storage.k8s.io/node-stage-secret-name: rook-csi-cephfs-node
+        csi.storage.k8s.io/node-stage-secret-namespace: rook-ceph-cluster-system
+        csi.storage.k8s.io/provisioner-secret-name: rook-csi-cephfs-provisioner
+        csi.storage.k8s.io/provisioner-secret-namespace: rook-ceph-cluster-system
       pool: data0
       reclaimPolicy: Delete
       volumeBindingMode: Immediate
