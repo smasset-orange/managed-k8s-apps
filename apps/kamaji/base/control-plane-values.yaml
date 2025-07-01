@@ -1,5 +1,6 @@
 ---
-etcd:
+# etcd:
+kamaji-etcd:
   tolerations: &tolerations
     - key: "node-role.kubernetes.io/control-plane"
       operator: "Exists"

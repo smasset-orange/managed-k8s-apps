@@ -1,1 +1,4 @@
 ---
+image:
+  # tag: edge-24.9.2
+  tag: edge-25.4.1
