@@ -1,0 +1,19 @@
+---
+apiVersion: kustomize.config.k8s.io/v1alpha1
+kind: Component
+
+patches:
+  - target:
+      kind: Deployment
+      name: kairos-operator
+    patch: |-
+      - op: replace
+        path: /spec/template/spec/containers/0/env/2/value
+        value: quay.io/kairos/operator:v0.0.3
+      - op: replace
+        path: /spec/template/spec/containers/0/env/3/value
+        value: quay.io/kairos/operator-node-labeler:v0.0.3
+
+images:
+  - name: quay.io/kairos/operator
+    newTag: v0.0.3
