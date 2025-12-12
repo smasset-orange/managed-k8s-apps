@@ -1,0 +1,7 @@
+---
+resources:
+  - ../../../charts/cilium
+
+components:
+  - ../../../components/cilium-proxy-replacement
+  - ../../../components/cilium-talos
