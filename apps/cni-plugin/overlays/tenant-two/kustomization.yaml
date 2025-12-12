@@ -1,0 +1,7 @@
+---
+resources:
+  - ../../base
+
+components:
+  - ../../components/calico
+  - ../../components/k0s
