@@ -1,0 +1,9 @@
+---
+resources:
+  - deployment.yaml
+  - service.yaml
+
+labels:
+  - pairs:
+      app: whoami
+    includeSelectors: true
