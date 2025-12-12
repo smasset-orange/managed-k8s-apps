@@ -1,0 +1,9 @@
+---
+resources:
+  - ../../base
+
+generators:
+  - helm
+
+components:
+  - ../../components/calico-k0s
