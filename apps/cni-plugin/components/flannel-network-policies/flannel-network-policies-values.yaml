@@ -1,0 +1,8 @@
+---
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: flannel
+valuesInline:
+  netpol:
+    enabled: true

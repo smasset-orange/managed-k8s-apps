@@ -1,0 +1,11 @@
+---
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: calico
+releaseName: calico
+namespace: kube-system
+name: tigera-operator
+version: v3.25.2
+repo: https://docs.tigera.io/calico/charts
+includeCRDs: true

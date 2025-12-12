@@ -1,0 +1,11 @@
+---
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: flannel
+releaseName: flannel
+namespace: kube-system
+name: flannel
+version:  v0.26.7
+repo: https://flannel-io.github.io/flannel
+includeCRDs: true
