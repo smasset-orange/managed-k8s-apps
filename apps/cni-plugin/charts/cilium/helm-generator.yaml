@@ -1,0 +1,10 @@
+---
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: cilium
+releaseName: cilium
+namespace: kube-system
+name: cilium
+version: v1.15.19
+repo: https://helm.cilium.io
