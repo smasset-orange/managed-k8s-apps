@@ -1,0 +1,8 @@
+---
+resources:
+  - ../../../charts/cilium
+
+patches:
+  - path: custom-values.yaml
+    target:
+      kind: HelmChartInflationGenerator

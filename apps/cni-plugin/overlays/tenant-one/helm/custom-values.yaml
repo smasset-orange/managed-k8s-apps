@@ -1,0 +1,8 @@
+---
+apiVersion: builtin
+kind: HelmChartInflationGenerator
+metadata:
+  name: cilium
+version: v1.15.18
+valuesInline:
+  kubeProxyReplacement: true

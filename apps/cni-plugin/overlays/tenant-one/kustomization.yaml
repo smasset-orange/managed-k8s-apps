@@ -2,5 +2,5 @@
 resources:
   - ../../base
 
-components:
-  - ../../components/flannel
+generators:
+  - helm
