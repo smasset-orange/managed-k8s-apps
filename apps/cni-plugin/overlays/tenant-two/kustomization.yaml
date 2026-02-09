@@ -2,6 +2,8 @@
 resources:
   - ../../base
 
+generators:
+  - helm
+
 components:
-  - ../../components/calico
-  - ../../components/k0s
+  - ../../components/calico-k0s
