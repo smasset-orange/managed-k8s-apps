@@ -2,4 +2,5 @@
 resources:
   - ../../base
 
-components: []
+components:
+   - ../../components/none
