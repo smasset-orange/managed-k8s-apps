@@ -7,3 +7,4 @@ generators:
 
 components:
   - ../../components/calico-k0s
+  - ../../components/calico-dns-policy
