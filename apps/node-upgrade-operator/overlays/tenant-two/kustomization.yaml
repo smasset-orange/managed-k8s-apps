@@ -3,4 +3,4 @@ resources:
   - ../../base
 
 components:
-  - ../../components/system-upgrade-controller
+  - ../../components/none
