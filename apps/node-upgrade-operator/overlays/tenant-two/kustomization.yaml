@@ -3,4 +3,4 @@ resources:
   - ../../base
 
 components:
-  - ../../components/kairos-operator
+  - ../../components/none
